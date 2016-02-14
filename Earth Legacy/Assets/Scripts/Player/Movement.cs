@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour {
 
     Animator anim;
 
-    public bool grounded0 = false;
+    public bool grounded0 = false, grounded3 = false;
     private bool grounded1=false,grounded2=false;
     public Transform[] groundCheck;
     float GroundRadious = 0.2f;
@@ -32,6 +32,7 @@ public class Movement : MonoBehaviour {
         grounded0 = Physics2D.OverlapCircle(groundCheck[0].position, GroundRadious, IsGround);
         grounded1 = Physics2D.OverlapCircle(groundCheck[1].position, GroundRadious, IsGround);
         grounded2 = Physics2D.OverlapCircle(groundCheck[2].position, GroundRadious, IsGround);
+        grounded3 = Physics2D.OverlapCircle(groundCheck[2].position, GroundRadious, IsGround);
         float move = Input.GetAxis("Horizontal");
 
         // MOVERSE MIENTRAS TE AGACHAS (activar en crouch y uncrouch lineas de codigo que disminuyen la velocidad)

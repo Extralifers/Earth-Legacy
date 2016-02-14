@@ -23,7 +23,7 @@ public class LevelGenerator : MonoBehaviour {
 			inCode = r.OutCode;
 
 			GameObject room = (GameObject) Instantiate(Resources.Load(r.RoomName), new Vector3(nextPos, 0), new Quaternion(0, 0, 0, 0)); 
-			nextPos += 47f; //45.85f
+			nextPos += 45.85f; //47f
 			currentSize++;
 		}
 
