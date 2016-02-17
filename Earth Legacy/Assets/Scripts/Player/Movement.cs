@@ -116,6 +116,14 @@ public class Movement : MonoBehaviour {
         }
     }
 
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+        if(coll.gameObject.tag == "RoomCollider")
+        {
+            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMovement>().ChangeRoom();
+        }
+    }
+
     //coloca el personaje mirando hacia la otra posicion
     void flip()
     {
