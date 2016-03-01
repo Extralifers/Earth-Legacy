@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 
 public class LevelGenerator : MonoBehaviour {
 
@@ -60,18 +61,16 @@ public class LevelGenerator : MonoBehaviour {
 
 	public static void buildRoomMap()
 	{
-		rooms.Add(new Room(0, 1, "Room_001"));
-		rooms.Add(new Room(1, 1, "Room_002"));
-		rooms.Add(new Room(1, 2, "Room_003"));
-		rooms.Add(new Room(2, 2, "Room_004"));
-		rooms.Add(new Room(2, 1, "Room_005"));
-		rooms.Add(new Room(1, 0, "Room_006"));
-		rooms.Add(new Room(2, 0, "Room_007"));
-		rooms.Add(new Room(1, 3, "Room_008"));
-		rooms.Add(new Room(3, 3, "Room_009"));
-		rooms.Add(new Room(3, 0, "Room_010"));
-		rooms.Add(new Room(3, 1, "Room_011"));
-		rooms.Add(new Room(3, 2, "Room_012"));
-		rooms.Add(new Room(2, 3, "Room_013"));
+        string path = Application.dataPath + @"/Resources/rooms";
+        var info = new DirectoryInfo(path);
+        var fileInfo = info.GetFiles();
+        string[] data;
+        foreach (var file in fileInfo)
+        {
+            data = file.Name.Split('_');
+            string[] namefile = file.Name.Split('.');
+            if (namefile.Length == 2)
+                rooms.Add(new Room(int.Parse(data[1]), int.Parse(data[2]), "rooms/"+namefile[0]));
+        }
 	}
 }

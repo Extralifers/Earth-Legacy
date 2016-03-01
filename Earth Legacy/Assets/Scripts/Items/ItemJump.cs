@@ -15,7 +15,7 @@ public class ItemJump : MonoBehaviour {
 
     void OnTriggerEnter2D()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().jump += 50;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().jump += 1000;
         Destroy(this.gameObject);
     }
 }

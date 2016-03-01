@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Camera\CameraMovement.cs" />
+    <Compile Include="Assets\Scripts\Items\Item.cs" />
     <Compile Include="Assets\Scripts\Items\ItemFireRate.cs" />
     <Compile Include="Assets\Scripts\Items\ItemGenerator.cs" />
     <Compile Include="Assets\Scripts\Items\ItemJump.cs" />
