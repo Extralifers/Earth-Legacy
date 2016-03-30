@@ -3,33 +3,41 @@ using System.Collections;
 
 public class CameraMovement : MonoBehaviour {
 
-    public float roomWidth = 30f;
-    public float roomHeight = 30f;//30 por poner algo
+    private GameObject player;
+
+    private float delayToFind = 0;
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     void Update () {
-	
+        
+        if (player == null)
+        {
+            LookForPlayer();
+            return;
+        }
+
+        this.transform.position = player.transform.position;
+
 	}
 
-    public void ChangeRoom()
+    void LookForPlayer()
     {
-        //caso de habitaciones normales
-        /*if (GameObject.Find("Personaje").GetComponent<Movement>().grounded3)
+        if(delayToFind <= Time.time)
         {
-            this.transform.Translate(new Vector3(0, roomHeight, 0));
+            GameObject founded = GameObject.FindGameObjectWithTag("Player");
+            if(founded != null)
+            {
+                player = founded;
+            }
+            else
+            {
+                delayToFind = Time.time + 0.5f;
+            }
         }
-        else if (GameObject.Find("Personaje").GetComponent<Movement>().grounded0)
-        {
-            this.transform.Translate(new Vector3(0, -roomHeight, 0));
-        }
-        else */if (GameObject.Find("Personaje").GetComponent<Movement>().facingRight)
-        {
-            this.transform.Translate(new Vector3(roomWidth, 0, 0));
-        }
-        else
-        {
-            this.transform.Translate(new Vector3(-roomWidth, 0, 0));
-        }
-        
     }
 
 }
