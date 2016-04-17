@@ -33,7 +33,7 @@ public class ItemGenerator : MonoBehaviour {
     {
         string path = Application.dataPath + @"/Resources/ItemPrefabs";
         var info = new DirectoryInfo(path);
-        var fileInfo = info.GetFiles("*.prefab");
+		FileInfo[] fileInfo = info.GetFiles("*.prefab");
 
         foreach (var file in fileInfo)
         {

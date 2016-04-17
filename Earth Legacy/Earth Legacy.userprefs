@@ -1,10 +1,14 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Items\ItemGenerator.cs">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Movement.cs">
     <Files>
-      <File FileName="Assets\Scripts\LevelGenerator\LevelGenerator.cs" Line="38" Column="4" />
+      <File FileName="Assets\Scripts\IA\BasicIA.cs" Line="41" Column="4" />
+      <File FileName="Assets\Scripts\Player\Movement.cs" Line="15" Column="31" />
+      <File FileName="Assets\Scripts\Camera\CameraMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Items\ItemGenerator.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\LevelGenerator\LevelGenerator.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\LevelGenerator\Room.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Items\ItemGenerator.cs" Line="16" Column="3" />
+      <File FileName="Assets\Scripts\Player\Weapon.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -4,12 +4,15 @@ using System.Collections;
 public class CameraMovement : MonoBehaviour {
 
     private GameObject player;
-
+    private Transform gameCamera;
+    private Transform user;
     private float delayToFind = 0;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        user = player.transform;
+        gameCamera = this.transform;
     }
 
     void Update () {
@@ -20,7 +23,8 @@ public class CameraMovement : MonoBehaviour {
             return;
         }
 
-        this.transform.position = player.transform.position;
+        //this.transform.position = player.transform.position;
+        gameCamera.position = new Vector3(user.position.x, user.position.y, -10);
 
 	}
 
