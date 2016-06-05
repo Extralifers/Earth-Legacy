@@ -30,16 +30,28 @@ public class BasicIA : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 		Vector3 distance =  player.position - enemy.position;
-
-		if (distance.x > 0)
-		{
-			enemy.Translate(Vector3.right* Time.deltaTime* Speed);
-		}
-		else
-		{
-			enemy.Translate(Vector3.left * Time.deltaTime * Speed);
-		}
-		if ((grounded0 || grounded1 || grounded2)&& Mathf.Abs (distance.x) <= 10 && distance.y >= 3) {
+        if (distance.x>10 || distance.x<-10) { 
+		    if (distance.x > 0)
+		    {
+			    enemy.Translate(Vector3.right* Time.deltaTime* Speed);
+		    }
+		    else
+		    {
+			    enemy.Translate(Vector3.left * Time.deltaTime * Speed);
+		    }
+        }
+        else
+        {
+            if (distance.x>0)
+            {
+                GetComponent<Rigidbody2D>().AddForce(new Vector2(120, 0));
+            }
+            else
+            {
+                GetComponent<Rigidbody2D>().AddForce(new Vector2(-120, 0));
+            }
+        }
+        if ((grounded0 || grounded1 || grounded2)&& Mathf.Abs (distance.x) <= 10 && distance.y >= 3) {
 			GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jump));
 		}
 
